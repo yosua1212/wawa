@@ -1,0 +1,29 @@
+
+{% block sidebar %}
+<div id="sidebar">
+    <a class="menu-item" href="{{ url_for('dashboard')}}">
+        <i class="fa-solid fa-home"></i>
+        <div>HOME</div>
+    </a>
+    <a class="menu-item" href="{{ url_for('add_post')}}">
+        <i class="fa-solid fa-newspaper"></i>
+        <div>Blog</div>
+    </a>
+    <a class="menu-item" href="{{ url_for('edit_pos')}}">
+        <i class="fa-solid fa-newspaper"></i>
+        <div>Edit Blog</div>
+    </a>
+    <a class="menu-item" href="/unit">
+        <i class="fa-solid fa-school"></i>
+        <div>UNITS</div>
+    </a>
+    <a class="menu-item" href="{{ url_for('logout')}}">
+        <i class="fa-solid fa-sign-out-alt"></i>
+        <div>LOGOFF</div>
+    </a>
+    <a class="menu-item" href="https://wa.me/628135750100761" target="_blank">
+        <i class="fa-solid fa-message"></i>
+        <div>CHAT</div>
+    </a>
+</div>
+{% endblock sidebar %}

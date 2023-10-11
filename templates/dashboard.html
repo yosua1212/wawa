@@ -1,0 +1,34 @@
+{% extends "basedashboard.html" %}
+
+{% block title %}Typed{% endblock %}
+
+{% block content %}
+        <div class="px-5 pt-5 pb-4">
+            <h3 class="text-primary text-center fw-700">Motto Kami</h3>
+            <h4 class="text-info text-center mb-0"><em>"<span class="typed-text"></span>"</em></h4>
+        </div>
+        <div class="container mt-5">
+            
+            <h1 class="mb-5"></h1>
+
+            <!-- Form untuk menambahkan pesan baru -->
+            <form action="/create" method="post" class="mb-5">
+                <div class="input-group">
+                    <input type="text" name="new_message" class="form-control" placeholder="Enter new message">
+                    <button class="btn btn-primary" type="submit">Add Message</button>
+                </div>
+            </form>
+
+            <!-- Daftar pesan dan tombol untuk menghapus -->
+            <ul class="list-group">
+                {% for message in messages %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ message.message }}
+                        <form action="/delete/{{ message.id }}" method="post" style="display: inline;">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            
+    {% endblock content %}
+

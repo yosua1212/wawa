@@ -1,0 +1,25 @@
+{% extends "basedashboard.html" %}
+{% block content %}
+
+    <h2>Edit Post</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.title.label }}<br>
+            {{ form.title() }}
+        </div>
+        <div class="form-group">
+            {{ form.content.label }}<br>
+            {{ form.content() }}
+        </div>
+        <div class="form-group">
+            {{ form.image.label }}<br>
+            {{ form.image() }}
+        </div>
+        <div class="form-group">
+            {{ form.read_time.label }}<br>
+            {{ form.read_time() }}
+        </div>
+        <button type="submit">Update</button>
+    </form>
+{% endblock %}
